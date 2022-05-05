@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-mixed-operators */
+import { sendRequest } from '../request';
+
 export const validator = setTimeout(() => {
   const parent = document.getElementById('app-container');
   const form = parent.children[4].children[0].children[2];
@@ -28,6 +30,7 @@ export const validator = setTimeout(() => {
         localStorage.removeItem('email');
         input.value = '';
       }
+      sendRequest(email);
     } else {
       alert('false');
     }
