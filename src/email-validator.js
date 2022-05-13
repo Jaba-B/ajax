@@ -22,6 +22,7 @@ export const validator = setTimeout(() => {
         btn.style.height = '42px';
         btn.innerHTML = 'UNSUBSCRIBE';
         form.style.justifyContent = 'center';
+        sendRequest(email);
       } else {
         input.style.display = 'inline-block';
         btn.style.height = '42px';
@@ -30,11 +31,11 @@ export const validator = setTimeout(() => {
         localStorage.removeItem('email');
         input.value = '';
       }
-      sendRequest(email);
+      // sendRequest(email);
     } else {
       alert('false');
     }
-    const emailInput = document.querySelector('added-section__email-btn');
-    emailInput.style.display = 'none';
+    // const emailInput = document.querySelector('added-section__email-btn');
+    // emailInput.style.display = 'none';
   }, false);
 }, 1000);

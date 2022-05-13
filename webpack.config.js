@@ -1,7 +1,9 @@
+/* eslint-disable linebreak-style */
+// const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, './main.js'),
@@ -9,6 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     assetModuleFilename: '[name][ext]',
+  },
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
   },
   module: {
     rules: [
